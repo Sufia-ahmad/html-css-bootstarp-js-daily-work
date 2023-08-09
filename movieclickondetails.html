@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    
+    .custom-card {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 15px;
+      cursor: pointer;
+      transition: box-shadow 0.3s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      height: 100%;
+      background-color: #f7f7f7;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .custom-card:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .col-md-4 {
+      padding: 10px;
+    }
+    .images {
+      height: 150px;
+      width: 100%;
+      object-fit: cover;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+    
+    .scroll-container {
+      max-height: 700px;
+      overflow-y: auto;
+    }
+   
+    ::-ms-input-placeholder { 
+      color: blue;
+    }
+    ::placeholder {
+      color: blue;
+      opacity: 1; 
+    }
+    :-ms-input-placeholder { 
+      color: blue;
+    }
+    ::-ms-input-placeholder {
+      color: blue;
+    }
+    .card-title{
+      color: indianred;
+      font-size: 24px;
+      transition: transform 0.3s ease;
+    }
+    .card-title:hover {
+      transform: scale(1.1);
+      color:mediumseagreen;
+    }
+    
+
+    
+    .emoji {
+      height: 30px;
+      width: 30px;
+      animation: bounce 1s infinite;
+    }
+
+    .center-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="custom-card" onclick="displayMovieDetails('Airplane', 'Howard W. Koch, Jon Davison', 'Jim Abrahams, David Zucker, Jerry', 'Elmer Bernstein', 'Play 1', '1980', 'www.movie.com')">
+          <img class="images" src="movie1.jpeg" alt="Airplane">
+          <h1 class="card-title">"Airplane"</h1>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="custom-card" onclick="displayMovieDetails('Monty Python and the Holy Grail', 'Mark Forstater, Michael White', 'Terry Gilliam,', 'De Wolfe Music Library',  'Play 2', '1975', 'www.moovie.com')">
+          <img class="images" src="movie2.jpeg" alt="Monty Python and the Holy Grail">
+          <h2 class="card-title">"Monty Python and the Holy Grail"</h2>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="custom-card" onclick="displayMovieDetails('Anchorman: The Legend of Ron Burgundy', 'Judd Apatow, Shauna Robertson', 'Adam McKay,', 'Alex Wurman',  'Play 3', '2004', 'www.moovie.com')">
+          <img class="images" src="movie3.jpeg" alt="Anchorman: The Legend of Ron Burgundy">
+          <h3 class="card-title">"Anchorman: The Legend of Ron Burgundy"</h3>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="custom-card" onclick="displayMovieDetails('Superbad', 'Judd Apatow, Shauna Robertson', 'Greg Mottola,', 'Lyle Workman',  'Play 4', '1994', 'www.moovie.com')">
+          <img class="images" src="movie4.jpeg" alt="Superbad">
+          <h4 class="card-title">"Superbad"</h4>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="custom-card" onclick="displayMovieDetails('Dumb and Dumber', 'Charles B. Wessler, Brad Krevoy, Steven Stabler', 'Greg Mottola,', 'Peter Farrelly, Bobby Farrelly', 'Play 5' , '1994', 'www.moovie.com')">
+          <img class="images" src="movie5.jpeg" alt="Dumb and Dumber">
+          <h5 class="card-title">"Dumb and Dumber"</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="custom-card" onclick="displayMovieDetails('The Hangover', 'Todd Phillips, Daniel Goldberg', ' Edgar Wright', 'Christophe Beck',  'Play 6', '2009', 'www.moovie.com')">
+          <img class="images" src="movie6.jpeg" alt="The Hangover">
+          <h6 class="card-title">"The Hangover"</h6>
+        </div>
+      </div>
+    </div>
+    <div id="movie-Details" class="mt-4">
+      <h1 class="card-title">Selected Movie Details</h1>
+      <img class="emoji" src="happyimo.jpg">
+      <legend for="Movie Name">Movie Name:</legend>
+      <input type="text" id="selected-name" placeholder="Movie Name">
+      <legend for="Producer Name">Producer Name:</legend>
+      <input type="text" id="selected-producer" placeholder="Producer Name">
+      <legend for="Director Name">Director Name:</legend>
+      <input type="text" id="selected-director" placeholder="Director Name">
+      <legend for="Music">Music:</legend>
+      <input type="text" id="selected-music" placeholder="Music">
+      <legend for="Play">Play</legend>
+      <input type="text" id="selected-play" placeholder="Play">
+      <legend for="Release Year">Release Year:</legend>
+      <input type="text" id="selected-releaseYear" placeholder="Release Year">
+      <legend for="Movie Path">Movie Path:</legend>
+      <input type="text" id="selected-path" placeholder="Movie Path">
+    </div>
+  </div>
+  <script>
+    function displayMovieDetails(name, producer, director, music, play, releaseYear, path) {
+      document.getElementById('selected-name').value = name;
+      document.getElementById('selected-producer').value = producer;
+      document.getElementById('selected-director').value = director;
+      document.getElementById('selected-music').value = music;
+      document.getElementById('selected-play').value = play;
+      document.getElementById('selected-releaseYear').value = releaseYear;
+      document.getElementById('selected-path').value = path;
+
+     
+    
+    }
+    
+  </script>
+</body>
+</html>
